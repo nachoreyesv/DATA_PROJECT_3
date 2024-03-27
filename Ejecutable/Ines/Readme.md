@@ -1,0 +1,31 @@
+# DIA 25/03
+
+- Creo mi carpeta e incluyo otro archivo main (ines_main) porque quería hacer algunos cambios más.
+  
+- En el archivo pruebas he probado a imputar por regresión todos los valores nulos del dataset (sin hacer ninguna distinción entre variables por el momento).
+  
+- Divido en train, val y test (70% - 10% - 20%)
+  
+- Normalizo los datos.
+  
+- Pruebo un **árbol de decisión** sin definir la profundidad:
+  - F1-score validación: 0.4002638626339004
+  - F1-score en kaggle: 0.47282
+  
+
+- Pruebo un clasificador **KNN** haciendo un GridSearch para k, el mejor valor de k = 9:
+  - F1-score validación: 0.43123673596373296
+  - F1-score en kaggle: 0.44021
+  
+
+- Pruebo otro **KNN**, esta vez con k = 4:
+  - F1-score validación: 0.4973919351513467
+  
+
+- Pruebo un clasificador **SVM** haciendo un GridSearch para C y kernel. Mejores hiperparámetros: {'C': 10, 'kernel': 'linear'} 
+  - F1-score validación: 0.4936275222609038
+  
+
+- Pensamientos de mejora:
+    - Dividir variables según su tipo para imputarlas.
+    - Al separar los sets en entrenamiento y validación, encontrar la forma de que tengan la misma estructura y distribución que los de test.
