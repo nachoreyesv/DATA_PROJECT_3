@@ -9,3 +9,11 @@
 1. Primer TRY con un Random Forest 0.51630
 2. Segundo TRY con un SVM 0.55434 POLE
 3. Tercer TRY con un KNN 0.45652
+
+### DIA 2
+
+1. He hecho una regresion logistica para saber que variables son las que mas relacion o mas inluencia tienen en la variable label
+2. Luego he creado una variable llamada score_by_correlation que es la suma de las correlaciones de cada variable de cada observacion
+
+1. 11 TRY con un Random Forest 0.57608
+2. 12 TRY con un Ensemble de Random Forest, Xgboost, Regresión Logística y Knn 0.53804
