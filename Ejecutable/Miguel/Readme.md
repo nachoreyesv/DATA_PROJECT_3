@@ -17,3 +17,11 @@
 ----------------------------------------------------------------------------------------------------
 1. TRY 9 - Es un error de try, se me olvidó escalar la variable de la edad
 2. TRY 10 - Con un Random Forest 0.57065
+
+
+## DIA 3
+
+1. He seguido todo del TRY 10, solo he cambiado en la limpieza de los datos la manera de convertir los NAs convinando en las varibales numéricas la media en algunas y la mediana en otras dependiendo del valor que me habían dado los coeficientes de asimetría. Aunque en los dos intentos ha ido a peor.
+----------------------------------------------------------------------------------------------------
+1. TRY 16 - Con un Random Forest 0.55434    (Mean: 'trestbps', 'thalach', 'chol'   -   Median: 'oldpeak', 'age')
+2. TRY 17 - Con un Random Forest 0.53804     (Mean: 'trestbps', 'thalach', 'age'   -   Median: 'oldpeak', 'chol')
