@@ -9,3 +9,14 @@
    >
 5. APLICAR SMOTE
 6. APLICAR CLASS WEIGHT
+   
+
+| Categoria   | Entradas | Porcentaje | Corresponderían en 184 entradas |
+|-------------|----------|------------|---------------------------------|
+| Categoria 0 | 327      | 44.67%     | 82                              |
+| Categoria 1 | 156      | 21.31%     | 39                              |
+| Categoria 2 | 108      | 14.75%     | 27                              |
+| Categoria 3 | 107      | 14.62%     | 27                              |
+| Categoria 4 | 34       | 4.64%      | 9                               |
+
+   
