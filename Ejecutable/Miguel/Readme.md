@@ -21,7 +21,15 @@
 
 ## DIA 3
 
-1. He seguido todo del TRY 10, solo he cambiado en la limpieza de los datos la manera de convertir los NAs convinando en las varibales numéricas la media en algunas y la mediana en otras dependiendo del valor que me habían dado los coeficientes de asimetría. Aunque en los dos intentos ha ido a peor.
+1. He seguido todo del TRY 10, solo he cambiado en la limpieza de los datos la manera de convertir los NAs combinando en las variables numéricas la media en algunas y la mediana en otras dependiendo del valor que me habían dado los coeficientes de asimetría. Aunque en los dos intentos ha ido a peor.
 ----------------------------------------------------------------------------------------------------
 1. TRY 16 - Con un Random Forest 0.55434    (Mean: 'trestbps', 'thalach', 'chol'   -   Median: 'oldpeak', 'age')
 2. TRY 17 - Con un Random Forest 0.53804     (Mean: 'trestbps', 'thalach', 'age'   -   Median: 'oldpeak', 'chol')
+3. TRY 18 - Con un Random Forest 0.55434    (Mean: 'trestbps', 'thalach', 'age', 'chol'   -   Median: 'oldpeak')
+
+
+## DIA 4
+
+1. Se acababa el tiempo del día y tiré un XG Boost a ver cuanto daba con la limpieza del one-hot y el escalado de las variables continuas.
+----------------------------------------------------------------------------------------------------
+1. TRY 21 - Con un XG Boost 0.52173
