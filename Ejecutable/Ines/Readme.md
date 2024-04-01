@@ -12,11 +12,15 @@
   
 - Pruebo un **árbol de decisión** sin definir la profundidad:
   - F1-score validación: 0.4002638626339004
+  
+  **TRY7**
   - F1-score en kaggle: 0.47282
   
 
 - Pruebo un clasificador **KNN** haciendo un GridSearch para k, el mejor valor de k = 9:
   - F1-score validación: 0.43123673596373296
+  
+  **TRY8**
   - F1-score en kaggle: 0.44021
   
 
@@ -80,6 +84,8 @@ El procedimiento es igual que en la Limpieza Nº 2. EL F1-score de validación d
   
 - **Naive Bayes**
   - F1-score de validación: 0.5380419518747414
+  
+  **TRY30 (2.0)**
   - F1-score en kaggle: 0.54347
 
 
@@ -95,6 +101,8 @@ El procedimiento es igual que en la Limpieza Nº 2. EL F1-score de validación d
   
 - **Random Forest** con 'max_depth': None, 'n_estimators': 50
   - F1-score de validación: 0.5224004084545164
+  
+  **TRY33**
   - F1-score en kaggle: 0.52717
   
 
