@@ -68,7 +68,7 @@
   
 ## Limpieza Nº 3:
 
-Los '0' de la variable 'CHOL' han sido tratados con NaNs: Variables continuas imputadas por regresión y variables categóricas imputadas por KNN
+Los '0' de la variable 'CHOL' han sido tratados como NaNs: Variables continuas imputadas por regresión y variables categóricas imputadas por KNN
 
 El procedimiento es igual que en la Limpieza Nº 2. EL F1-score de validación de todos los modelos es el mismo que en la limpieza Nº 2 excepto para el Random Forest:
 
@@ -77,3 +77,34 @@ El procedimiento es igual que en la Limpieza Nº 2. EL F1-score de validación d
 
 - **Random Forest** con 'max_depth': 10, 'n_estimators': 200
   - F1-score de validación: 0.5434492812679145
+  
+- **Naive Bayes**
+  - F1-score de validación: 0.5380419518747414
+  - F1-score en kaggle: 0.54347
+
+
+# DIA 01/04
+
+- Pruebo a añadir un PCA a la Limpieza Nº 3. 
+
+### 1ª PRUEBA
+- PCA con 3 componentes
+  
+- **Naive Bayes**
+  - F1-score de validación: 0.5033081285444234
+  
+- **Random Forest** con 'max_depth': None, 'n_estimators': 50
+  - F1-score de validación: 0.5224004084545164
+  - F1-score en kaggle: 0.52717
+  
+
+
+### 2ª PRUEBA
+- PCA con 6 componentes
+
+- **Random Forest** con 'max_depth': 10, 'n_estimators': 50
+  - F1-score de validación: 0.4773618829682903
+
+
+
+
