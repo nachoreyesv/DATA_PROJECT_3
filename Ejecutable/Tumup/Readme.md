@@ -63,21 +63,75 @@ Random Forest 0,56521
 4. Tratar variables mas importantes old peak, age, talach 
 5. eliminar caracteristicas poco importantes 
 6. crear para thal un nuevo nivel en 0 , desconocido 
-7. aplicar SHAP 
-   
+
+## TRY 
+
+No probado
+
+## INTENTO 6
+
+Lo mismo que el 5 pero sin count encodig para variables chol ,trestbps y cp
+
+## TRY 
+
+Random Forest 0,53804
+
+## INTENTO 7
+
+Lo mismo que el 6 pero dropeando ca y slope
+
+## TRY
+
+No probado
+
+## INTENTO 8 
+
+Lo mismo que el 8 pero las variables chol y trestbps las dejamos continuas
+
+## TRY
+
+Random Forest 0,51086
+
+## INTENTO 9 
+
+Probamos a eliminar las variables con muchos nulos sin sentido y NaNs, dejamos solo las variables:
+Age
+Sex
+Cp
+tresbps
+fbs
+restecg
+thalach
+exang
+oldpeak  == PROBAR SIN TENER COMO VALOR ABSOLUTO 
+
+## INTENTO 10
+
+Lo mismo que el anterior pero aplicando Min-Max para las variables cuantitativas
+
+y subsampling y oversampling para los grupos mayoristas y minoristas
 
 
+## INTENTO 11 == 4.1
+
+He tirado con MinMax, con standard Scaler cambia uno. Sera para mejor?
+Oldpeak con media para los negativos, he probado y empeora.
+SIN SMOTE 
+
+## TRY 
+Random Forest 0.57608
+Como mejoramos?
 
 ## IDEAS
 1.CLASSWEIGHTS
 
-| Categoria   | Entradas | Porcentaje | Corresponderían en 184 entradas |
+| Categoria   | Entradas | Porcentaje | Corresponderían en 184 entradas |  EL MEJOR HASTA LA FECHA 
 |-------------|----------|------------|---------------------------------|
-| Categoria 0 | 327      | 44.67%     | 82                              |
-| Categoria 1 | 156      | 21.31%     | 39                              |
-| Categoria 2 | 108      | 14.75%     | 27                              |
-| Categoria 3 | 107      | 14.62%     | 27                              |
-| Categoria 4 | 34       | 4.64%      | 9                               |
+| Categoria 0 | 327      | 44.67%     | 82                              |  96
+| Categoria 1 | 156      | 21.31%     | 39                              |  37
+| Categoria 2 | 108      | 14.75%     | 27                              |  28
+| Categoria 3 | 107      | 14.62%     | 27                              |  23
+| Categoria 4 | 34       | 4.64%      | 9                               |  0
 
 
 1. Importancia de características (Feature Importance)
