@@ -114,5 +114,52 @@ El procedimiento es igual que en la Limpieza Nº 2. EL F1-score de validación d
   - F1-score de validación: 0.4773618829682903
 
 
+## LIMPIEZA Nº 4:
+
+Corrijo el error de la limpieza Nº 3. Había cogido el dataframe con los 0 de 'chol' en lugar del que ya los tenía como Nan :(. Por lo demás todo igual.
+
+- **KNN** 
+  - F1-score de validación: 0.5537183145878799
+
+- **SVM** 
+  - F1-score de validación: 0.46270176720573813
+
+- **Random Forest**
+  - F1-score de validación: 0.5230518200735179
+
+- **XGBoost**
+  - F1-score de validación: 0.5502044481067173
+
+- **Naive Bayes**
+  - F1-score de validación: 0.5055874422569836
+  
+KNN, XGBOOST y RAANDOM FOREST mejoran, los demás van a peor.
+
+Pruebo a hacer PCA otra vez con varios números de componentes pero ningún modelo mejora respecto a los modelos con las variables "sin modificar".
 
 
+Pruebo a crear un **SET FALSO DE TEST** de forma que tengo 60% train, 10% validación, 10% test FASLO y 20% del test original. 
+
+Sigo el mismo procedimiento de la limpieza Nº 4, con normalización incluida.
+
+Casi todos los modelos mejoran en validación y los porcentajes de aciertos (respecto al set de test FALSO) son bastante buenos:
+
+- **KNN** 
+  - F1-score de validación: 0.462986295033371
+  - Porcentaje de aciertos: 56.52%
+
+- **SVM** 
+  - F1-score de validación: 0.5261034255599473
+  - Porcentaje de aciertos: 54.35%
+
+- **Random Forest**
+  - F1-score de validación: 0.5997578332986716
+  - Porcentaje de aciertos: 51.09%
+
+- **XGBoost**
+  - F1-score de validación: 0.5581477386676265
+  - Porcentaje de aciertos: 58.70%
+
+- **Naive Bayes**
+  - F1-score de validación: 0.5155824443867921
+  - Porcentaje de aciertos: 55.43%
