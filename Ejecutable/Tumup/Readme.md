@@ -52,8 +52,18 @@ Random Forest 0.54347
    1.  Ordinal encoding en las variables slope, ca y thal y restecg. 
    2.  Count encoding en las variables chol ,**thalach_cat** , trestbps y cp.
    
+## TRY 
 
+Random Forest 0,56521
+## INTENTO 5
 
+1. Eliminar talach_cat y dejar solo talach . Mantener el count de tresbps y chol.
+2. eliminar negatrivos oldpeak == LOS PASO A POSITIVOS , SE PRODUJO ERROR ENTRADA DATOS?
+3. dropeamos variable CA
+4. Tratar variables mas importantes old peak, age, talach 
+5. eliminar caracteristicas poco importantes 
+6. crear para thal un nuevo nivel en 0 , desconocido 
+7. aplicar SHAP 
    
 
 
@@ -69,4 +79,22 @@ Random Forest 0.54347
 | Categoria 3 | 107      | 14.62%     | 27                              |
 | Categoria 4 | 34       | 4.64%      | 9                               |
 
-   
+
+1. Importancia de características (Feature Importance)
+Muchos modelos de machine learning, especialmente los basados en árboles como Random Forest y XGBoost, ofrecen una forma directa de evaluar la importancia de las características. Esta importancia se mide en función de cómo cada característica mejora el rendimiento del modelo, por ejemplo, cómo reduce la impureza en un árbol de decisión.
+
+2. Coeficientes de modelos lineales
+Para modelos lineales (como la regresión lineal o logística), los coeficientes asociados a cada variable indican su importancia. Un coeficiente grande en valor absoluto sugiere que la variable correspondiente es importante para predecir la variable objetivo.
+
+3. Eliminación recursiva de características (RFE)
+La Eliminación Recursiva de Características (RFE) es un enfoque que consiste en construir un modelo y elegir las características más importantes, eliminando las menos importantes de manera recursiva hasta que se alcanza el número deseado de características.
+
+4. Permutación de importancia de características
+Este método implica mezclar los valores de cada característica, uno por uno, y medir cómo afecta el desempeño del modelo. Una gran disminución en el rendimiento al permutar los valores de una característica indica que esa característica es importante para el modelo.
+
+5. SHAP (SHapley Additive exPlanations)
+SHAP es un enfoque basado en la teoría de juegos para medir la importancia de las características. Proporciona una medida de la contribución de cada característica a la predicción de cada muestra. SHAP es útil porque ofrece explicaciones interpretables para cualquier modelo de machine learning.
+
+6. Análisis de Componentes Principales (PCA)
+Aunque PCA es más una técnica de reducción de dimensionalidad que un método directo para evaluar la importancia de las características, puede ser útil para identificar las combinaciones de características que capturan la mayor variabilidad en los datos.
+
