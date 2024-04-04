@@ -52,21 +52,103 @@ Random Forest 0.54347
    1.  Ordinal encoding en las variables slope, ca y thal y restecg. 
    2.  Count encoding en las variables chol ,**thalach_cat** , trestbps y cp.
    
+## TRY 
+
+Random Forest 0,56521
+## INTENTO 5
+
+1. Eliminar talach_cat y dejar solo talach . Mantener el count de tresbps y chol.
+2. eliminar negatrivos oldpeak == LOS PASO A POSITIVOS , SE PRODUJO ERROR ENTRADA DATOS?
+3. dropeamos variable CA
+4. Tratar variables mas importantes old peak, age, talach 
+5. eliminar caracteristicas poco importantes 
+6. crear para thal un nuevo nivel en 0 , desconocido 
+
+## TRY 
+
+No probado
+
+## INTENTO 6
+
+Lo mismo que el 5 pero sin count encodig para variables chol ,trestbps y cp
+
+## TRY 
+
+Random Forest 0,53804
+
+## INTENTO 7
+
+Lo mismo que el 6 pero dropeando ca y slope
+
+## TRY
+
+No probado
+
+## INTENTO 8 
+
+Lo mismo que el 8 pero las variables chol y trestbps las dejamos continuas
+
+## TRY
+
+Random Forest 0,51086
+
+## INTENTO 9 
+
+Probamos a eliminar las variables con muchos nulos sin sentido y NaNs, dejamos solo las variables:
+Age
+Sex
+Cp
+tresbps
+fbs
+restecg
+thalach
+exang
+oldpeak  == PROBAR SIN TENER COMO VALOR ABSOLUTO 
+
+## INTENTO 10
+
+Lo mismo que el anterior pero aplicando Min-Max para las variables cuantitativas
+
+y subsampling y oversampling para los grupos mayoristas y minoristas
 
 
-   
+## INTENTO 11 == 4.1
 
+He tirado con MinMax, con standard Scaler cambia uno. Sera para mejor?
+Oldpeak con media para los negativos, he probado y empeora.
+SIN SMOTE 
 
+## TRY 
+Random Forest 0.57608
+Como mejoramos?
 
 ## IDEAS
 1.CLASSWEIGHTS
 
-| Categoria   | Entradas | Porcentaje | Corresponderían en 184 entradas |
+| Categoria   | Entradas | Porcentaje | Corresponderían en 184 entradas |  EL MEJOR HASTA LA FECHA 
 |-------------|----------|------------|---------------------------------|
-| Categoria 0 | 327      | 44.67%     | 82                              |
-| Categoria 1 | 156      | 21.31%     | 39                              |
-| Categoria 2 | 108      | 14.75%     | 27                              |
-| Categoria 3 | 107      | 14.62%     | 27                              |
-| Categoria 4 | 34       | 4.64%      | 9                               |
+| Categoria 0 | 327      | 44.67%     | 82                              |  96
+| Categoria 1 | 156      | 21.31%     | 39                              |  37
+| Categoria 2 | 108      | 14.75%     | 27                              |  28
+| Categoria 3 | 107      | 14.62%     | 27                              |  23
+| Categoria 4 | 34       | 4.64%      | 9                               |  0
 
-   
+
+1. Importancia de características (Feature Importance)
+Muchos modelos de machine learning, especialmente los basados en árboles como Random Forest y XGBoost, ofrecen una forma directa de evaluar la importancia de las características. Esta importancia se mide en función de cómo cada característica mejora el rendimiento del modelo, por ejemplo, cómo reduce la impureza en un árbol de decisión.
+
+2. Coeficientes de modelos lineales
+Para modelos lineales (como la regresión lineal o logística), los coeficientes asociados a cada variable indican su importancia. Un coeficiente grande en valor absoluto sugiere que la variable correspondiente es importante para predecir la variable objetivo.
+
+3. Eliminación recursiva de características (RFE)
+La Eliminación Recursiva de Características (RFE) es un enfoque que consiste en construir un modelo y elegir las características más importantes, eliminando las menos importantes de manera recursiva hasta que se alcanza el número deseado de características.
+
+4. Permutación de importancia de características
+Este método implica mezclar los valores de cada característica, uno por uno, y medir cómo afecta el desempeño del modelo. Una gran disminución en el rendimiento al permutar los valores de una característica indica que esa característica es importante para el modelo.
+
+5. SHAP (SHapley Additive exPlanations)
+SHAP es un enfoque basado en la teoría de juegos para medir la importancia de las características. Proporciona una medida de la contribución de cada característica a la predicción de cada muestra. SHAP es útil porque ofrece explicaciones interpretables para cualquier modelo de machine learning.
+
+6. Análisis de Componentes Principales (PCA)
+Aunque PCA es más una técnica de reducción de dimensionalidad que un método directo para evaluar la importancia de las características, puede ser útil para identificar las combinaciones de características que capturan la mayor variabilidad en los datos.
+
