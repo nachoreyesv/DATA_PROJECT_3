@@ -150,15 +150,34 @@ Cat Boost : 0.59239
  Cojo el try anterior y no trato los NaNs de las variables categoricas, ya que el propio modelo de catboost las puede tratar, tambien elimino el conteo de las variables chol ,**thalach_cat** , trestbps y cp.
 
 ## TRY
-
+Cat Boost Fracaso, 0.53260
 ## INTENTO 16
 
  Elimino la variable thalach_cat al ver que no tiene buenos scores, y la dejo como cuantitativa y la estandarizo. Le meto los mejores parametros del grid
 
- Cat Boost : 0.57608 
- QUIERO PROBAR EL TRY 56 que es con los parametros del modelo antiguo  {'depth': 8, 'iterations': 30, 'l2_leaf_reg': 1, 'learning_rate': 0.01
+## TRY
+Cat Boost : 0.57608
 
-Cat Boost Fracaso, 0.53260
+ ## INTENTO 17
+ Lo mismo que el 16 pero con los parametros  {'depth': 8, 'iterations': 30, 'l2_leaf_reg': 1, 'learning_rate': 0.01 }
+ 
+ ## TRY
+Cat Boost : 0.60326
+
+## INTENTO 18
+
+Lo mismo que el 17 pero cambiamos MinMax a StandardScaler
+
+## TRY
+
+Cat Boost : 0.57065
+
+## INTENTO 19 
+
+PROBAR EL try58 con 28 Iteraciones
+ 
+
+
 ## IDEAS
 1.CLASSWEIGHTS
 
