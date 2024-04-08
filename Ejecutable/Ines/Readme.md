@@ -163,3 +163,54 @@ Casi todos los modelos mejoran en validación y los porcentajes de aciertos (res
 - **Naive Bayes**
   - F1-score de validación: 0.5155824443867921
   - Porcentaje de aciertos: 55.43%
+
+
+# DIA 02/04
+
+He cogido el código de las correlaciones del TRY 11 pero cambiando la imputación de NaNs como en la limpieza Nº 4. 
+
+- **Random Forest**
+  **TRY 43**
+  - F1-score en kaggle: 0.52173 :( .
+
+
+# DIA 04/04
+Limpio todas las variables a saco, considerando que aquellos valores que están por encima del 3r cuartil + (1.5 * IQR) o por debajo del 1r cuartil - (1.5 * IQR) representan valores atípicos y los reemplazo por NaNs.
+
+Los NaNs son imputados por KNN en variables categóricas y por regresión en variables continuas. 
+
+Separo los sets de forma que tengan la misma distribución, normalizo y empiezo con los modelos. Aquí hago pruebas sin añadir pesos a la variable 'label' y después añadiendolos para ver la diferencia.
+
+
+- **SVM SIN PESOS** 
+  - F1-score de validación: 0.4908787113684352  (48 aciertos según la matriz de confusión)
+
+
+- **SVM CON PESOS** 
+  - F1-score de validación: 0.46763718553044614 (47 aciertos)
+
+
+- **Random Forest SIN PESOS**
+  - F1-score de validación: 0.5269615346349004 (51 aciertos)
+  **TRY 63**
+  - F1-score en kaggle: 0.52717 (No predice 4s)
+
+
+- **Random Forest CON PESOS**
+  - F1-score de validación: 0.4861310858365415 (48 aciertos)
+  **TRY 54_02**
+  - F1-score en kaggle: 0.48913 (Predice cuatro 4s)
+
+
+- **XGBoost SIN PESOS**
+  - F1-score de validación:0.5091899008867443 (49 aciertos)
+  
+
+- **XGBoost CON PESOS**
+  - F1-score de validación: 0.5391887389638513 (51 aciertos)
+  **TRY 62**
+  - F1-score en kaggle: 0.45652 (Predice ocho 4s)
+
+
+- **Naive Bayes**
+  - F1-score de validación: 0.5251517607424357
