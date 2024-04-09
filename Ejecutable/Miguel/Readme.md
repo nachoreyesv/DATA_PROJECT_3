@@ -68,3 +68,30 @@ F1-score del modelo: 0.70877
 Mejores hiperparámetros encontrados: {'max_depth': 20, 'max_features': 'sqrt', 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 50}
 Accuracy del modelo: 0.51630
 F1-score del modelo: 0.6810
+
+
+## DIA 8 
+
+1. He cogido el try.ipynb de Paco ya que habia sacado el mejor intento hasta la fecha (TRY 56 - 0,60326) y he ido modificando pequeñas cosas porque nos quedábamos sin tiempo para lanzar los intentos diarios:
+----------------------------------------------------------------------------------------------------
+1. TRY 59 - Con un CatBoost 0.59239 --> Lo mismo que el de Paco, pero he metido todas las variables desde el principio.
+
+2. TRY 60 - Con un CatBoost 0.56521 --> Lo mismo que el de Paco, pero he metido en el modelo los parámetros del TRY 56.
+
+3. TRY 61 - Con un CatBoost 0.55434 --> Lo mismo que el de Paco, pero he usado y metido en el modelo los parámetros de que me ha dado RandomSearch en vez de GridSearch.
+
+3. TRY 61 (segundo) - Con un CatBoost 0.57608 --> Lo mismo que el de Paco, pero he usado para la variables categóricas One-Hot en vez de OrdinalEncoder.
+
+
+## DIA 9
+
+1. Me he dedicado únicamente a modificar los parámetros del TRY 56 (0,60326):
+----------------------------------------------------------------------------------------------------
+1. TRY 64 - Con un CatBoost 0.57065 
+
+2. TRY 65 - Con un CatBoost 0.59782 
+
+3. TRY 66 - Con un CatBoost 0.60326 --> El único cambio que hice respecto al TRY 56 es que los nan de la variable "thalach" los cambio por la media pero desde el trozo de código en el que decimos qué variable es numérica y cual es categórica, en vez de calcular la media con una función y unirla como se hacía en el TRY 56.
+Parámetros utilizados: {'depth': 8, 'iterations': 20, 'l2_leaf_reg': 3, 'learning_rate': 0.09} 
+
+4. TRY 67 - Con un CatBoost 0.59239 --> Me salía mejor al hiperparametrizar, pero luego dio menos score al meterlo en el Kaggle.
