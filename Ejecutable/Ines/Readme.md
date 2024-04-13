@@ -1,3 +1,5 @@
+# NOTEBOOK PRUEBAS
+
 # DIA 25/03
 
 - Creo mi carpeta e incluyo otro archivo main (ines_main) porque quería hacer algunos cambios más.
@@ -214,3 +216,72 @@ Separo los sets de forma que tengan la misma distribución, normalizo y empiezo 
 
 - **Naive Bayes**
   - F1-score de validación: 0.5251517607424357
+
+
+# NOTEBOOK CATBOOST
+
+Todos las pruebas de este notebook parten del try 56 de Paco.
+
+### 1. STRATIFIED
+
+Try 56 paco igual pero estratificando la división de los sets
+- F1-score de validación: 0.5000
+No predice 4s.
+
+### 2. WEIGHTED 'LABEL': 4-OVERSAMPLED
+Sin estratificar y generando el mismo numero de muestras de la etiqueta 4 que de la 0.
+- Accuracy de validación: 0.6304347826086957
+- F1-score en kaggle(try56_weighted.csv): 0.56521 (Predice 11 4s)
+
+
+### 2.1. WEIGHTED 'LABEL': 4-OVERSAMPLED + STRATIFICATION
+
+Igual que antes pero añadiendo la estratificación
+- F1-score de validación: 0.3818413816807011
+Predice 14 4s en test.
+
+
+### 3. WEIGHTED 'LABEL': all categories (class_weights = [0.01, 1, 1, 1, 30] )
+
+Sin estratificar, sin crear muestras ficticias, solo le asigno un peso a cada etiqueta. 0: 0.01, 1: 1, 2: 1, 3: 1, 4: 30
+
+- F1-score de validación: 0.5094766689881604
+No predice 4s.
+
+
+### 3.1. WEIGHTED 'LABEL': all categories (class_weights = [0.1, 1, 1, 1, 10] ) + STRATIFICATION
+
+Cambio los pesos y añado la estratificación.
+- F1-score de validación:  0.42321908809732667
+- F1-score en kaggle(try56_overunder_strat.csv): 0.53804 (Predice 3 4s)
+
+
+### 4. OVER AND UNDERSAMPLING + STRATIFICATION
+
+Estratifico los sets.
+Hago oversampling para que las etiquetas 2, 3 y 4 tengan el mismo número de observaciones que la etiqueta 1. Y de la misma forma hago undersampling para la etiqeuta 0.
+
+- F1-score de validación: 0.4444249971995967
+No predice 4s.
+
+
+### 4.2. OVER AND UNDERSAMPLING
+
+Igual que el punto 4 pero sin estratificar los sets.
+
+- F1-score de validación: 0.5289858792980903
+No predice 4s.
+
+### 4.3. OVERSAMPLE ALL CATEGORIES = 0 + WEIGHTS
+
+Hago oversampling de las etiquetas 1, 2, 3 y 4 para que tengan el mismo número de obervaciones que la etiqueta 0.
+
+Pruebo infinitas combinaciones de 'weights'. Con pesos = 0: 1, 1: 2, 2: 2, 3: 2, 4: 6 
+
+- F1-score de validación: 0.5355377788633773
+- F1-score en kaggle(try56_wght_over2.csv): 0.52717 (Predice 6 4s)
+
+
+### 4.3.2. OVERSAMPLE ALL CATEGORIES = 0 + WEIGHTS
+Sigo probando combinaciones de pesos. Con algunas combinaciones creo mostruos que predicen como 50 4s xd. Combnación 0:1, 1: 2, 2: 2, 3: 3, 4: 10 predice 2 4s y: 
+- F1-score de validación: 0.49062463150447244
