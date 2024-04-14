@@ -166,18 +166,45 @@ Cat Boost : 0.60326
 
 ## INTENTO 18
 
-Lo mismo que el 17 pero cambiamos MinMax a StandardScaler
+Separar train de test.
 
-## TRY
+En train:
+1. Trestbps media, eliminamos un valor outlayer con 0 modificaba la distribución **Cola hacia la derecha, igual se puede aplicar una transformación**
+2. Eliminar valores de chol negativo , 0 y NaNs remplazados por media , acotamos entre 100 y 400 **Suponemos que luego se eliminarian de todas formas al eliminar las variables ca y thal** [REVISAR]
+3. NaNs en variables categoricas [exang, fbs] eliminados
+4. restecg no hacemos nada
+5. talach, remplazamos NaNs por media
+6. En oldpeak, sustituimos NaNs por mediana y luego eliminamos todos los valores superiores a 4.
+7. Slope, creamos nuevo valor para los NaNs que se representa con un 0
+   
+En test:
+1. Trestbps media
+2. Sustituimos valores chol 0 en chol por medía calculada sin los 0 y luego los NaNs los remplazamos por esta medía, acotamos entre 100 y 400
+3. fbs y exang remplazamos por moda
+4. restecg remplazamos por moda
+5. talach, remplazamos NaNs por media
+6. En oldpeak, reemplazamos los valores NaN por la mediana calculada sin contar los valores negativos. Despues sutituimos los valores negativos por esta misma mediana
+7. Slope, creamos nuevo valor para los NaNs que se representa con un 0
 
-Cat Boost : 0.57065
+Probado  con smote: BASURA
+ADASYN : BASURA
+Edited Nearest Neighbors (ENN): BASURA
+BalancedRandomForestClassifier
+EasyEnsembleClassifier
+## SIGUIENTE
+Voting Classifier / Stacking
+Una vez acabado, probar pero aplicando MICE para los valores faltantes.
+Manteniendo lo de los valores negativos y 0 del chol
+eliminando el outlayer de trestbps
+oldpeak
+slope 
+dropeo de las dos variables con muchos NaNs, podemos probar a predecirlos luego 
 
-## INTENTO 19 
+aplicar binarize con catboost
 
-PROBAR EL try58 con 28 Iteraciones
- 
+probar a rellenar sin dropear las columnas que faltan muchas 
 
-
+aplicar LDA
 ## IDEAS
 1.CLASSWEIGHTS
 
@@ -208,3 +235,20 @@ SHAP es un enfoque basado en la teoría de juegos para medir la importancia de l
 6. Análisis de Componentes Principales (PCA)
 Aunque PCA es más una técnica de reducción de dimensionalidad que un método directo para evaluar la importancia de las características, puede ser útil para identificar las combinaciones de características que capturan la mayor variabilidad en los datos.
 
+Imputación por la Mediana: Similar a la media, pero más robusta frente a datos con outliers. Es una buena opción para datos numéricos que no están distribuidos normalmente.
+
+Imputación por Valor Constante: Seleccionar un valor constante para reemplazar todos los NaN. Este valor podría ser 0, -1, o cualquier otro valor que tenga sentido en el contexto de la variable.
+
+Imputación de Valor más Frecuente: Aunque similar a la imputación por moda, este método puede ser útil en variables categóricas donde hay una categoría que domina claramente sobre las otras.
+
+Imputación Utilizando un Modelo: Crear un modelo predictivo para estimar los valores faltantes basado en otras variables en el dataset. Los modelos comunes incluyen regresión lineal, interpolación, o métodos más sofisticados como K-Nearest Neighbors (KNN) o árboles de decisión.
+
+Imputación Multivariada: Técnicas como la imputación por ecuaciones de estimación generalizadas (MICE - Multiple Imputation by Chained Equations) que utilizan modelos de regresión múltiple para imputar valores faltantes en varias pasadas, basadas en el resto de las variables. Es especialmente útil cuando los patrones de datos faltantes son complejos y no completamente al azar.
+
+Imputación por Método de Interpolación: Este método es útil en series temporales y datos espaciales donde es posible interpolar valores entre entradas observadas válidas.
+
+Hot Deck Imputation: Consiste en imputar valores observados al azar de un "donante" que se parece al caso con valores faltantes.
+
+Imputación por Propagación hacia Atrás o hacia Adelante: En series temporales, donde se puede suponer continuidad o tendencia, imputar el último valor válido conocido (propagación hacia adelante) o el siguiente valor válido (propagación hacia atrás) puede ser razonable.
+
+Imputación con Datos Aumentados: Utilizar el conocimiento del dominio para generar o sintetizar datos realistas que puedan reemplazar los valores faltantes.
