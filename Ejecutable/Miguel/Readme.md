@@ -95,3 +95,12 @@ F1-score del modelo: 0.6810
 Parámetros utilizados: {'depth': 8, 'iterations': 20, 'l2_leaf_reg': 3, 'learning_rate': 0.09} 
 
 4. TRY 67 - Con un CatBoost 0.59239 --> Me salía mejor al hiperparametrizar, pero luego dio menos score al meterlo en el Kaggle.
+
+
+## DIA 10
+
+1. Me he dedicado a hcaer cambios en la manera de limpiar los datos del TRY 66 (0,60326):
+----------------------------------------------------------------------------------------------------
+1. TRY 78 - Con un CatBoost 0.57065 --> Cree una varibale nueva que era agrupación por clusters, pero funcionó mal.
+
+2. TRY 83 - Con un CatBoost 0.54347 --> En la limpieza elimino las variable "ca" y "thal" debido a la gran cantidad de datos nulos, y también categorizo la variable "oldpeak" ya que tenía una gran cantidad de ceros.
