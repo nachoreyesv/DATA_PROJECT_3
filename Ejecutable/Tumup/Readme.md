@@ -186,11 +186,29 @@ En test:
 6. En oldpeak, reemplazamos los valores NaN por la mediana calculada sin contar los valores negativos. Despues sutituimos los valores negativos por esta misma mediana
 7. Slope, creamos nuevo valor para los NaNs que se representa con un 0
 
-Probado  con smote: BASURA
-ADASYN : BASURA
-Edited Nearest Neighbors (ENN): BASURA
-BalancedRandomForestClassifier
-EasyEnsembleClassifier
+
+## INTENTO 19
+Lo mismo que el 18 pero con MICE 
+
+## INTENTO 20 
+
+Lo mismo que el try 17 pero aplicando LDA
+
+## INTENTO 21
+
+Lo mismo que el 18 pero con Ensamble 
+
+## INTENTO 22 
+
+Lo mismo que el intento 17 pero con Ensamble
+
+## INTENTO 23
+Usamos la nueva limpieza del try 18 y las variables usadas en el try 17, aplicamos mice, lda y ensamble de modelos
+
+# INTENTO 24
+ Probamos el intento 17 pero convirtiendo los 0 de chol, con los mejores hiperparametros no ha ido bien.
+
+
 ## SIGUIENTE
 Voting Classifier / Stacking
 Una vez acabado, probar pero aplicando MICE para los valores faltantes.
@@ -199,6 +217,12 @@ eliminando el outlayer de trestbps
 oldpeak
 slope 
 dropeo de las dos variables con muchos NaNs, podemos probar a predecirlos luego 
+
+Probado  con smote: BASURA
+ADASYN : BASURA
+Edited Nearest Neighbors (ENN): BASURA
+BalancedRandomForestClassifier
+EasyEnsembleClassifier
 
 aplicar binarize con catboost
 
