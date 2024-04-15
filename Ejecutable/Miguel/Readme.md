@@ -47,7 +47,7 @@
 
 1. He seguido todo del try 10 (ya estando bien escalada la variable "age").
 ----------------------------------------------------------------------------------------------------
-1. RY 31 - Con un Random Forest 0.54891 --> He cambiado los ceros de la variable "chol" por su media.
+1. TRY 31 - Con un Random Forest 0.54891 --> He cambiado los ceros de la variable "chol" por su media.
 2. TRY 32 - Con un Random Forest 0.54347 --> He cambiado los ceros de la variable "chol" y los ceros y número negativos de la variable "oldpeak" por sus medias.
 
 
@@ -78,9 +78,7 @@ F1-score del modelo: 0.6810
 
 2. TRY 60 - Con un CatBoost 0.56521 --> Lo mismo que el de Paco, pero he metido en el modelo los parámetros del TRY 56.
 
-3. TRY 61 - Con un CatBoost 0.55434 --> Lo mismo que el de Paco, pero he usado y metido en el modelo los parámetros de que me ha dado RandomSearch en vez de GridSearch.
-
-3. TRY 61 (segundo) - Con un CatBoost 0.57608 --> Lo mismo que el de Paco, pero he usado para la variables categóricas One-Hot en vez de OrdinalEncoder.
+3. TRY 61 - Con un CatBoost 0.57608 --> Lo mismo que el de Paco, pero he usado para la variables categóricas One-Hot en vez de OrdinalEncoder.
 
 
 ## DIA 9
